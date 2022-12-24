@@ -5,7 +5,6 @@ class UserController {
         const { password } = ctx.request.body;
         const promise = new Promise((resolve) => {
             emitter.on('registrateTg', ({ chatId, text }) => {
-                console.log("ghhhhhhhhhhhhh");
                 if (text === password) {
                     ctx.body = chatId;
                     bot.sendMessage(chatId, `вы подписанны на получение уведомлений`);
